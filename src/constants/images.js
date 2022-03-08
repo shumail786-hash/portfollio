@@ -35,6 +35,7 @@ import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 import developer from "../assets/developer.jpg";
+import mamba from "../assets/mamba.jpg";
 export default {
   email,
   mobile,
@@ -70,4 +71,5 @@ export default {
   skype,
   spotify,
   developer,
+  mamba,
 };
