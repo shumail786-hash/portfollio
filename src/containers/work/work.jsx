@@ -9,8 +9,6 @@ const Work = () => {
   const [filterWorks, setfilterWorks] = useState([]);
   const [activeFilter, setactiveFilter] = useState("All");
   const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 });
-  const handleWorkFilter = (item) => {};
-
   useEffect(() => {
     const query = "*[_type == 'works']";
     client.fetch(query).then((data) => {
@@ -21,6 +19,21 @@ const Work = () => {
       setfilterWorks(data);
     });
   }, []);
+  const handleWorkFilter = (item) => {
+    console.log(item);
+    setactiveFilter(item);
+    setanimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setanimateCard([{ y: 0, opacity: 1 }]);
+      if (item === "All") {
+        setfilterWorks(works);
+      } else {
+        setfilterWorks(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
+
   return (
     <div>
       <h2 className="head-text">
@@ -28,12 +41,7 @@ const Work = () => {
         Section
       </h2>
       <div className="app__work-filter">
-        {[
-          "All",
-          "Front-End Development",
-          "Back-End Development",
-          "React JS",
-        ].map((item, index) => (
+        {["All", `Web 1`, "Web 2", "React JS"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
