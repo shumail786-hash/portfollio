@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./navbar.scss";
-import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 export default function Navbar() {
@@ -8,7 +7,10 @@ export default function Navbar() {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        {/* <img src={images.logo} alt="logo" /> */}
+        <h6 className="head-text logo-heading">
+          Shu<span>mail</span>
+        </h6>
       </div>
       <ul className="app__navbar-links">
         {["home", "about", "work", "skills", "contact"].map((item) => (

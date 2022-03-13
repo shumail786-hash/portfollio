@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./work.scss";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -20,7 +20,7 @@ const Work = () => {
     });
   }, []);
   const handleWorkFilter = (item) => {
-    console.log(item);
+    // console.log(item);
     setactiveFilter(item);
     setanimateCard([{ y: 100, opacity: 0 }]);
 
@@ -122,5 +122,8 @@ const Work = () => {
     </div>
   );
 };
-
-export default AppWrap(Work, "work");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);

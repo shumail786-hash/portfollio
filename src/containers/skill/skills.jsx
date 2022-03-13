@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./skills.scss";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import ReactTolltip from "react-tooltip";
 const Skills = () => {
@@ -22,10 +21,10 @@ const Skills = () => {
     });
   }, []);
 
-  const experienceSort = experiences.sort((a, b) => {
-    return a.year - b.year;
-  });
-  // console.log(vari, "qurban");
+  // const experienceSort = experiences.sort((a, b) => {
+  //   return a.year - b.year;
+  // });
+
   return (
     <div>
       <h2 className="head-text">Skills & Experience </h2>
@@ -38,6 +37,7 @@ const Skills = () => {
               className="app__skills-item app__flex"
               key={skill.name}
             >
+              {console.log(skill.bgColor)}
               <div
                 className="app__flex"
                 style={{
@@ -51,7 +51,7 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className="app__skills-exp">
-          {experienceSort.map((experience) => (
+          {experiences.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="p-text">{experience.year}</p>
@@ -86,4 +86,9 @@ const Skills = () => {
     </div>
   );
 };
-export default AppWrap(Skills, "skills");
+
+export default AppWrap(
+  MotionWrap(Skills, "app__skills"),
+  "skills",
+  "app__whitebg"
+);
