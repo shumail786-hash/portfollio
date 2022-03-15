@@ -11,7 +11,7 @@
   flex-wrap: wrap-reverse;
   margin: 4rem 2rem 2rem;
   .app__footer-card {
-    min-width: 290px;
+    min-width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -22,6 +22,9 @@
     border-radius: 10px;
     background-color: #f3f4f5;
     transition: all 0.3s ease-in-out;
+    @media screen and (min-width: 318px) and (max-width: 357px) {
+      width: 410px !important;
+    }
     img {
       width: 40px;
       height: 40px;
@@ -33,7 +36,12 @@
     a {
       text-decoration: none;
       font-weight: 500;
+      @media screen and (min-width: 318px) and (max-width: 610px) {
+        font-size: 12px !important;
+        // border: 1px solid;
+      }
     }
+
     &:hover {
       box-shadow: 0 0 25px #fef4f5;
     }
