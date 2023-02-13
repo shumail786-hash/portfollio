@@ -21,9 +21,9 @@ const Skills = () => {
     });
   }, []);
 
-  // const experienceSort = experiences.sort((a, b) => {
-  //   return a.year - b.year;
-  // });
+  const experienceSort = experiences.sort((a, b) => {
+    return b.year - a.year;
+  });
 
   return (
     <div>
@@ -37,7 +37,7 @@ const Skills = () => {
               className="app__skills-item app__flex"
               key={skill.name}
             >
-              {console.log(skill.bgColor)}
+              {/* {console.log(skill.bgColor)} */}
               <div
                 className="app__flex"
                 style={{
@@ -51,8 +51,8 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className="app__skills-exp">
-          {experiences.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience.year}>
+          {experienceSort.map((experience, index) => (
+            <motion.div className="app__skills-exp-item" key={index}>
               <div className="app__skills-exp-year">
                 <p className="p-text">{experience.year}</p>
               </div>
