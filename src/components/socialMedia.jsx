@@ -7,7 +7,7 @@ export default function SocialMedia() {
     window.open("https://twitter.com/ak47smoker");
   };
   const onInstagram = () => {
-    window.open("https://www.instagram.com/ddc_smoker/");
+    window.open("https://www.instagram.com/m_shumail_mushtaq/");
   };
   const onFacebook = () => {
     window.open("https://web.facebook.com/muhammadshumail.tkd.3/");
