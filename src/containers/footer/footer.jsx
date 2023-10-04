@@ -3,7 +3,6 @@ import "./footer.scss";
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
-
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -35,6 +34,11 @@ const Footer = () => {
       setLoading(false);
       setFormSubmitted(true);
     });
+  };
+  const handleFormSubmission = () => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   };
   return (
     <>
@@ -92,6 +96,7 @@ const Footer = () => {
       ) : (
         <div>
           <h3 className="head-text">Thank You For Getting In Touch</h3>
+          {handleFormSubmission()}
         </div>
       )}
     </>
