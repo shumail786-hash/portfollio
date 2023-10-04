@@ -2,7 +2,6 @@ import React from "react";
 import { BsTwitter, BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 export default function SocialMedia() {
-  // const [twitter, setTwitter] = useState("");
   const onTwitter = () => {
     window.open("https://twitter.com/ak47smoker");
   };
